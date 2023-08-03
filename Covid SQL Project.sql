@@ -5,7 +5,8 @@ select location,date,total_cases,new_cases,total_deaths,population
 from CovidDeaths
 order by 1,2;
 
-select location,date,total_cases,total_deaths, convert(numeric(5,2),(cast(total_deaths as float)/cast(total_cases as float))*100) as DeathPercentage
+select location,date,total_cases,total_deaths, convert(numeric(5,2)
+,(cast(total_deaths as float)/cast(total_cases as float))*100) as DeathPercentage
 from dbo.CovidDeaths
 where location like('%Italy%')
 order by 1,2;
